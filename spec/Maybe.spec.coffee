@@ -13,7 +13,7 @@ describe 'Maybe Monad', ->
     expect(Just null).toEqual Nothing
     expect(Just undefined).toEqual Nothing
     expect(Just()).toEqual Nothing
-    expect(Just() is Nothing).toBeTruthy()
+    expect(Just(null) is Nothing).toBeTruthy()
 
   it 'creates Just', ->
     expect(Just(3).val).toEqual 3
@@ -36,7 +36,6 @@ describe 'Maybe Monad', ->
       .bind(fNothing)
       .bind(f1)
     expect(res).toEqual Nothing
-
 
 
 
