@@ -1,6 +1,19 @@
 {
     "name": "coffee-monad",
     "version": "0.0.1",
+    "main": "./monad.coffee",
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/"
+    },
+    "scripts": {
+        "test": "jasmine-node --coffee --verbose spec/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/peking2/coffee-monad.git"
+    },
+    "author": "Gary Zhao <garyzhao@live.com>",
+    "license": "BSD",
     "dependencies": {
         "readline-sync": "*"
     }
