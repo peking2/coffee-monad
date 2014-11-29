@@ -5,7 +5,7 @@ require '../src/List'
 f1 = (input)->
   [0..input].map (i)->i+1
 
-describe 'Maybe Monad', ->
+describe 'List Monad', ->
   it 'flatmaps', ->
     res =
       [1, 2, 3]

@@ -4,7 +4,7 @@ _bind = (f) -> switch this
 
 unit = (input) ->
   Object.freeze
-    val: if input? then input else null
+    val: input ? null
     bind: _bind
 
 Nothing = unit null
