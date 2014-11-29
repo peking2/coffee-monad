@@ -1,9 +1,6 @@
 rs = require 'readline-sync'
 {p} = require '../util/log'
-{IO} = require '../src/IO'
-
-getLine = IO rs.question
-putStrLn = (x)-> IO (-> console.log "putStrLn:#{x}")
+{IO, getLine, putStrLn} = require '../src/IO'
 
 monad = null
 

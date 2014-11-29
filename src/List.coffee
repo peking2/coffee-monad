@@ -1,10 +1,2 @@
-_bind = (f) -> this.val.map(f).reduce (a,b)-> unit a.val.concat b.val
+Array.prototype.bind = (f) -> this.map(f).reduce (a,b)-> a.concat b
 
-unit = (input) ->
-  Object.freeze
-    val: input
-    bind: _bind
-
-List = (input...)-> unit input
-
-module.exports = {List}

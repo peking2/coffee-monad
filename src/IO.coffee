@@ -1,3 +1,5 @@
+rs = require 'readline-sync'
+
 _bind = (f) ->
   val = this
   IO (-> f(val())())
@@ -8,4 +10,7 @@ unit = (input) ->
 
 IO = (input)-> unit input
 
-module.exports = {IO}
+getLine = IO rs.question
+putStrLn = (x)-> IO (-> console.log x)
+
+module.exports = {IO, getLine, putStrLn}
