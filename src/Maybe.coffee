@@ -1,9 +1,11 @@
+_bind = (f) -> switch this
+  when Nothing then Nothing
+  else f this.val
+
 unit = (input) ->
   Object.freeze
     val: if input? then input else null
-    bind: (f)-> switch this
-      when Nothing then Nothing
-      else f this.val
+    bind: _bind
 
 Nothing = unit null
 
