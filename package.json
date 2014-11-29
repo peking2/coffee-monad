@@ -1,6 +1,7 @@
 {
     "name": "coffee-monad",
-    "version": "0.0.1",
+    "description": "Monad implementations in Coffeescript",
+    "version": "0.0.7",
     "main": "./monad.coffee",
     "publishConfig": {
         "registry": "https://registry.npmjs.org/"

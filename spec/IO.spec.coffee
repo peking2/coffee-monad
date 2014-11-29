@@ -1,4 +1,3 @@
-rs = require 'readline-sync'
 {p} = require '../util/log'
 {IO, getLine, putStrLn} = require '../src/IO'
 
@@ -21,5 +20,12 @@ describe 'IO Monad', ->
     monad = res
 
   it 'runs Monad', ->
+    s = "Monad test"
+    getLine = jasmine.createSpy("getLine spy").andReturn s
+    spyOn(console, 'log')
     do monad
+    expect(getLine).toHaveBeenCalled()
+    expect(console.log).toHaveBeenCalledWith s
+    expect(console.log).toHaveBeenCalledWith 'end.'
+
 
