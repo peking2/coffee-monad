@@ -4,4 +4,4 @@ coffee-monad
 Monad implementations in Coffeescript
 
 ## Change Log
-* Maybe monad (Nov. 28, 2014)
+* Maybe, List monad (Nov. 28, 2014)
