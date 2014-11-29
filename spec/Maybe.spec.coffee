@@ -28,6 +28,8 @@ describe 'Maybe Monad', ->
         .bind(f1)
         .bind(f1)
     expect(res).toEqual Just 3
+    {val} = res
+    expect(val).toEqual 3
 
   it 'returns Nothing', ->
     res =
