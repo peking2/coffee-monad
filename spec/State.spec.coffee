@@ -17,9 +17,9 @@ describe 'State Monad', ->
 
   it 'simulates stack', ->
     res =
-      push(3).bind ((a)->
-        pop.bind (b)->
-          pop)
+      push(3).bind ->
+        pop.bind ->
+          pop
     expect(res(state)).toEqual [[3], [1, 2]]
 
 
