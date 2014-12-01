@@ -1,7 +1,7 @@
 rs = require 'readline-sync'
 {p} = require '../util/log'
 
-_bind = (f) => IO (-> f(val())())
+_bind = (f) -> IO (=> f(this())())
 
 _unit = (input) ->
   input.bind = _bind

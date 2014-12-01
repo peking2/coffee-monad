@@ -9,6 +9,6 @@ _unit = (input) ->
 
 Nothing = _unit null
 
-Just = (input)-> if input? then unit input else Nothing
+Just = (input)-> if input? then _unit input else Nothing
 
 module.exports = {Nothing, Just}

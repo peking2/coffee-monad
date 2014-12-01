@@ -1,6 +1,6 @@
 {p} = require '../util/log'
 
-_bind = (f)=> (w)-> f(this w) w
+_bind = (f)-> (w)=> f(this w) w
 
 _unit = (input)->
   input.bind = _bind
