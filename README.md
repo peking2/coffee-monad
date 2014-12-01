@@ -1,6 +1,9 @@
 Learn You Monad in Coffeescript
 ============
+```
+Monad implementations in Coffeescript for learning and practice.
 The goal is to make it as a guide for Coffeescript programmers to learn Monads.
+```
 
 ## What is Monad?
 * In general, Monad is a design pattern
