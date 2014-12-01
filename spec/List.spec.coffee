@@ -2,8 +2,7 @@
 {p} = require '../util/log'
 require '../src/List'
 
-f1 = (input)->
-  [0..input].map (i)->i+1
+f1 = (input)-> [0..input].map (i)->i+1
 
 describe 'List Monad', ->
   it 'flatmaps', ->

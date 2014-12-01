@@ -2,11 +2,9 @@
 {p} = require '../util/log'
 {Nothing, Just} = require '../src/Maybe'
 
-fNothing = (input)->
-  Nothing
+fNothing = (input)-> Nothing
 
-f1 = (input)->
-  Just input+1
+f1 = (input)-> Just input+1
 
 describe 'Maybe Monad', ->
   it 'creates Nothing', ->

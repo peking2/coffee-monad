@@ -2,8 +2,7 @@
 {p} = require '../util/log'
 {Writer} = require '../src/Writer'
 
-f1 = (res)->
-  Writer res+1, ["res is #{res}"]
+f1 = (res)-> Writer res+1, ["res is #{res}"]
 
 describe 'Writer Monad', ->
   it 'creates logs: []', ->
