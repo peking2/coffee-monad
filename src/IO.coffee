@@ -1,15 +1,13 @@
 rs = require 'readline-sync'
 {p} = require '../util/log'
 
-_bind = (f) ->
-  val = this
-  IO (-> f(val())())
+_bind = (f) => IO (-> f(val())())
 
-unit = (input) ->
+_unit = (input) ->
   input.bind = _bind
   Object.freeze input
 
-IO = unit
+IO = _unit
 
 getLine = IO rs.question
 putStrLn = (x)-> IO (-> console.log x)

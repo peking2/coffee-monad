@@ -1,14 +1,12 @@
 {p} = require '../util/log'
 
-_bind = (f)->
-  val = this
-  (w)-> f(val w) w
+_bind = (f)=> (w)-> f(this w) w
 
-unit = (input)->
+_unit = (input)->
   input.bind = _bind
   Object.freeze input
 
-Reader = unit
+Reader = _unit
 
 module.exports = {Reader}
 

@@ -1,18 +1,17 @@
 {p} = require '../util/log'
 
 _bind = (f)->
-  h = this
-  unit (s)->
-    [a, newState] = h s
+  _unit (s)=>
+    [a, newState] = this s
     g = f a
     g newState
 
 # input: s-> [a, s]
-unit = (input)->
+_unit = (input)->
   input.bind = _bind
   Object.freeze input
 
-State = unit
+State = _unit
 
 module.exports = {State}
 
