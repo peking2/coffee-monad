@@ -16,7 +16,7 @@ such as **Javascript**/**Coffeescript**
 Type class is a concept in Haskell. You can treat it as a interface in Java. Monad type class defines two functions,
 unit and return.
 * unit is to wrap a value into a monad
-* bind is to take the value out of monad and apply it to a function which takes regular value as input and outputs a monad
+* bind is to unwrap the value and apply it to a function which takes the value as input and outputs a monad
 
 In Haskell, bind function is infix operator >>=, so when you bind, it looks like
 ```
