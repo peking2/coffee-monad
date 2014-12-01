@@ -9,7 +9,7 @@ The goal is to make it as a guide for Coffeescript programmers to learn Monads.
 and **bind** (or >>= in Haskell, *flatMap* in Scala)
 and they satisfy [Monad laws](https://www.haskell.org/haskellwiki/Monad_laws)
 
-Monads were introduced in Haskell, but any language which supports higher order functions can implement Monads,
+Monad was introduced in Haskell, but any language which supports higher order functions can implement Monads,
 such as **Javascript**/**Coffeescript**
 
 ## Monad type class
