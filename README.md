@@ -5,8 +5,8 @@ The goal is to make it as a guide for Coffeescript programmers to learn Monads.
 
 ## What is Monad?
 * In general, Monad is a design pattern
-* Specifically, Monad is a data structure which implements [Monad type class](#Monad type class) and
-satisfies [Monad laws](#Monad laws)
+* Specifically, Monad is a data structure which implements [Monad type class](#monad-type-class) and
+satisfies [Monad laws](#monad-laws)
 
 Monad was introduced in Haskell, but any language which supports higher order functions can implement Monads,
 such as **Javascript**/**Coffeescript**
