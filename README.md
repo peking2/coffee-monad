@@ -5,21 +5,23 @@ The goal is to make it as a guide for Coffeescript programmers to learn Monads.
 
 ## What is Monad?
 * In general, Monad is a design pattern
-* Specifically, Monad is a data structure which implements **unit** (or *return* in Haskell)
-and **bind** (or >>= in Haskell, *flatMap* in Scala)
-and they satisfy [Monad laws](https://www.haskell.org/haskellwiki/Monad_laws)
+* Specifically, Monad is a data structure which implements [Monad type class](#Monad type class) and
+satisfies [Monad laws](#Monad laws)
 
 Monad was introduced in Haskell, but any language which supports higher order functions can implement Monads,
 such as **Javascript**/**Coffeescript**
 
 ## Monad type class
-Type class is a concept in Haskell. You can treat it as a interface in Java. Monad type class defines two functions,
+Type class is a concept in Haskell. You can treat it as an interface in Java. Monad type class defines two functions,
 unit and return.
-* unit is to wrap a value into a monad
-* bind is to unwrap the value and apply it to a function which takes the value as input and outputs a monad
+* unit is to wrap a value into a monad. In Haskell it's named **return**.
+* bind is to unwrap the value and apply it to a function which takes the value as input and outputs a monad.
+In Haskell, it's **>>=** and in Scala it's **flatMap**.
+
+We use Monad's name as unit function for conveniences, so you can write Maybe(5) instead of Maybe.unit(5).
 
 In Haskell, bind function is infix operator >>=, so when you bind, it looks like
-```
+```haskell
 m >>= \ a -> m
 ```
 Javascript doesn't support operator overloading, so it would look like
@@ -30,6 +32,12 @@ It's not as convenient as Haskell, so we leverage Javascript's OO nature and mak
 ```coffeescript
 m.bind (a)-> m
 ```
+
+## Monad laws
+* **Left identity:** ```unit(a).bind f == f a```
+* **Right identity:** ```m.bind unit == m```
+* **Associativity:** ```(m.bind f).bind g == m.bind (x)-> f(x).bind g```
+
 
 ## Installation
 
