@@ -38,6 +38,30 @@ m.bind (a)-> m
 * **Right identity:** ```m.bind unit == m```
 * **Associativity:** ```(m.bind f).bind g == m.bind (x)-> f(x).bind g```
 
+## How to use monad
+### Haskell
+
+```haskell
+do
+  a <- m(a)
+  b <- m(b)
+  c <- m(c)
+  return (a+b+c)
+
+    ||
+    \/
+
+m(a) >>= \a -> m(b) >>= \b -> m(c) >>= \c m(a+b+c)
+```
+### Coffeescript
+```coffeescript
+m(a).bind (a)->
+  m(b).bind (b)->
+    m(c).bind (c)->
+      m(a+b+c)
+```
+Haskell has do-notation, but it's actually syntax sugar for bind(>>=).
+Coffeescript doesn't support do-notation, but it looks like similar to Haskell binding combinations.
 
 ## Installation
 
