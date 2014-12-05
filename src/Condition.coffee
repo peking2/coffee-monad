@@ -1,3 +1,4 @@
+{p, Log} = require '../util/log'
 ###
   This monad is to solve a real world problem I encoutered recently.
   Given a list of functions (f :: (callback)-> callback err, res), make a program to call them sequentially and
@@ -7,11 +8,11 @@
   I don't see an existing monad can achieve it, so I wrote a customized monad which is called Condition
 ###
 
-_bind = (m) =>
+_bind = (f) ->
   if this.check()
     this
   else
-    m (cond)-> _unit this.check, this.errors.concat cond.errors, this.res.concat cond.res
+    f.func (cond)=> _unit this.check, this.errors.concat(cond.errors), this.res.concat(cond.res)
 
 ###
   check :: -> Bool
@@ -20,19 +21,20 @@ _bind = (m) =>
   func :: (callback)-> callback err, res
 ###
 _unit = (check, errors, res, func)->
-  func =
+  m = {}
+  m.check = check ? -> true
+  m.errors = errors ? []
+  m.res = res ? []
+  m.bind = _bind
+  m.func =
     if func?
-      func (err, res)->
-        _unit(check, [err], res)
+      (callback)->
+        func (err, res)->
+          errors = if err? then [err] else []
+          _unit(check, errors, res).func callback
     else
       (callback)-> callback this
-
-  func.check = check ? -> true
-  func.errors = errors ? []
-  func.res = res ? []
-  func.bind = _bind
-  func
-
+  Object.freeze m
 
 Condition = _unit
 
