@@ -75,6 +75,7 @@ $ npm install coffee-monad
 $ jasmine-node --coffee --verbose spec/
 ```
 ## Change Log
+* Condition monad (Dec. 4, 2014)
 * update README (Dec. 1, 2014)
 * State monad (Nov. 30, 2014)
 * Writer, Reader monad (Nov. 29, 2014)
