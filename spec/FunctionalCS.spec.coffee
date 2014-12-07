@@ -33,4 +33,15 @@ describe 'List Monad', ->
     res = [1,2,3,3,4,5,1].groupBy (x)-> x
     expect(res[1]).toEqual [1,1]
 
+  it 'grouped', ->
+    res = [1,2,3,4,5].grouped(2)
+    expect(res).toEqual [[ 1, 2 ], [ 3, 4 ], [ 5 ]]
+
+  it 'finds max and min', ->
+    arr = [1,2,3,4,5]
+    max=arr.max()
+    min=arr.min()
+    expect(max).toEqual 5
+    expect(min).toEqual 1
+
 

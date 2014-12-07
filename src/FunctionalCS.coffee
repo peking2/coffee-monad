@@ -14,5 +14,19 @@ Array.prototype.groupBy = (f)->
     res[key] ?= []
     res[key].push i
   res
+Array.prototype.grouped = (k)->
+  for i in [0...this.length] by k
+    this[i...i+k]
+Array.prototype.max = ->
+  Math.max.apply(null, this)
+Array.prototype.min = ->
+  Math.min.apply(null, this)
 
-
+  ###
+  maxBy
+  minBy
+  nonEmpty
+  partition
+  permutations
+  sum
+###
