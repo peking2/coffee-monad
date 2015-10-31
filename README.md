@@ -13,7 +13,7 @@ such as **Javascript**/**Coffeescript**
 
 ## Monad type class
 Type class is a concept in Haskell. You can treat it as an interface in Java. Monad type class defines two functions,
-unit and return.
+unit and bind.
 * unit is to wrap a value into a monad. In Haskell it's named **return**.
 * bind is to unwrap the value and apply it to a function which takes the value as input and outputs a monad.
 In Haskell, it's **>>=** and in Scala it's **flatMap**.
